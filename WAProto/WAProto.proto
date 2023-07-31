@@ -393,6 +393,7 @@ message ContextInfo {
     repeated GroupMention groupMentions = 40;
     optional UTMInfo utm = 41;
     optional ForwardedNewsletterMessageInfo forwardedNewsletterMessageInfo = 43;
+    optional BusinessMessageForwardInfo businessMessageForwardInfo = 44;
     message AdReplyInfo {
         optional string advertiserName = 1;
         optional MediaType mediaType = 2;
@@ -403,6 +404,10 @@ message ContextInfo {
             IMAGE = 1;
             VIDEO = 2;
         }
+    }
+    
+    message BusinessMessageForwardInfo {
+        optional string businessOwnerJid = 1;
     }
     
     message ExternalAdReplyInfo {
@@ -1222,6 +1227,7 @@ message Message {
         
         message CarouselMessage {
             repeated Message.InteractiveMessage cards = 1;
+            optional int32 messageVersion = 2;
         }
         
         message CollectionMessage {
@@ -1837,6 +1843,7 @@ message MsgOpaqueData {
     optional string encReactionTargetMessageKey = 25;
     optional bytes encReactionEncPayload = 26;
     optional bytes encReactionEncIv = 27;
+    optional bytes botMessageSecret = 29;
     message PollOption {
         optional string name = 1;
     }
