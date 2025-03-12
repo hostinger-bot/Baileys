@@ -46,7 +46,7 @@
     "async-mutex": "^0.5.0",
     "axios": "^1.6.0",
     "cache-manager": "^5.7.6",
-    "libsignal": "github:ds6/libsignal",
+    "libsignal": "github:hostinger-bot/libsignal-node",
     "lodash": "^4.17.21",
     "music-metadata": "^7.12.3",
     "pino": "^9.6",
